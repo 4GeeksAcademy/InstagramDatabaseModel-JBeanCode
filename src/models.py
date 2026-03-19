@@ -48,6 +48,7 @@ class Like(db.Model):
 
 class Media(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
-    media_url: Mapped[str] = mapped_column()
+    type: Mapped[str] = mapped_column(String(120), nullable = False)
+    media_url: Mapped[str] = mapped_column(String(500))
     post_id: Mapped[int] = mapped_column(ForeignKey("post.id"))
 
